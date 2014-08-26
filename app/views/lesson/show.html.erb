@@ -1,16 +1,21 @@
-<h1><%= @lesson.name %></h1>
+<% content_for(:title, "#{@lesson.name} | Learn How To Program") %>
+<% content_for(:heading, "#{@lesson.name}" ) %>
 
-<h2>Lesson <%= @lesson.number%></h2>
+<div class="container">
+  <h2>Lesson <%= @lesson.number%> : <%= @lesson.name %></h2>
 
-<h3>Content</h3>
-<%= @lesson.content %>
+  <%= @lesson.content %>
 
-<ul>
-  <li><p><a href="/lessons/<%=@lesson.id%>"
-  data-confirm="Are you sure?"
-  data-method="delete" rel="nofollow">
-  Delete Lesson</a></p></li>
-  <li><p><a href="/lessons/<%=@lesson.id%>/edit">Edit Lesson</a></p></li>
-  <li><p><a href="/lessons/<%=@lesson.next.id%>">Next Lesson</a></p></li>
-  <li><p><a href="/lessons/<%=@lesson.prev.id%>">Previous Lesson</a></p></li>
-</ul>
+</br>
+</br>
+
+  <ul>
+    <li><p><a href="/lessons/<%=@lesson.id%>"
+    data-confirm="Are you sure?"
+    data-method="delete" rel="nofollow">
+    Delete Lesson</a></p></li>
+    <li><p><a href="/lessons/<%=@lesson.id%>/edit">Edit Lesson</a></p></li>
+    <li><p><a href="/lessons/<%=@lesson.next.id%>">Next Lesson</a></p></li>
+    <li><p><a href="/lessons/<%=@lesson.prev.id%>">Previous Lesson</a></p></li>
+  </ul>
+</div>

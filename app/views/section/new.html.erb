@@ -1,11 +1,20 @@
-<h1>Create New Section!</h1>
+<% content_for(:title, "Create Section | Learn How To Program") %>
+<% content_for(:heading, "Create New Section" ) %>
 
-<form action="/sections" method="post">
-  <label for="section_name">Name</label>
-  <input id="section_name" name="section[name]" type="text">
+<div class="container">
 
-  <label for="section_number">Section Number</label>
-  <input id="section_number" name="section[number]" type="number">
+<form action="/sections" method="post" role="form">
+  <div class="form-group">
+    <label for="section_name">Name</label>
+    <input id="section_name" name="section[name]" type="text" class="form-control">
+  </div>
 
-  <button>Create</button>
+  <div class="form-group">
+    <label for="section_number">Section Number</label>
+    <input id="section_number" name="section[number]" type="number" class="form-control">
+  </div>
+
+  <button type="submit" class="btn btn-danger">Create</button>
 </form>
+
+</div>

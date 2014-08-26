@@ -1,27 +1,29 @@
-<h1><%= @section.name %></h1>
+<% content_for(:title, "#{@section.name} | Learn How To Program") %>
+<% content_for(:heading, "#{@section.name}" ) %>
 
-<h2>Section <%= @section.number%></h2>
+<div class="container">
+  <h2>Section <%= @section.number%>: <%= @section.name %></h2>
 
+  <!-- Print all lessons that belong to section  -->
+  <% if @section.lessons.length > 0 %>
+    <ul>
+    <% @section.lessons.each do |lesson| %>
+      <li><a href="/lessons/<%=lesson.id%>"><%=lesson.name%></a></li>
+    <% end %>
+    </ul>
+  <%else%>
+    <h3>There are no lessons in this section yet.</h3>
+  <%end%>
 
-<!-- Print all lessons that belong to section  -->
-<% if @section.lessons.length > 0 %>
+  </br>
+
   <ul>
-  <% @section.lessons.each do |lesson| %>
-    <li><a href="/lessons/<%=lesson.id%>"><%=lesson.name%></a></li>
-  <% end %>
+    <li><p><a href="/sections/<%=@section.id%>"
+    data-confirm="Are you sure?"
+    data-method="delete" rel="nofollow">
+    Delete section</a></p></li>
+    <li><p><a href="/sections/<%=@section.id%>/edit">Edit Section</a></p></li>
+    <li><p><a href="/sections/<%=@section.next.id%>">Next Section</a></p></li>
+    <li><p><a href="/sections/<%=@section.prev.id%>">Previous Section</a></p></li>
   </ul>
-<%else%>
-  <h3>There are no lessons in this section yet.</h3>
-<%end%>
-
-</br>
-
-<ul>
-  <li><p><a href="/sections/<%=@section.id%>"
-  data-confirm="Are you sure?"
-  data-method="delete" rel="nofollow">
-  Delete section</a></p></li>
-  <li><p><a href="/sections/<%=@section.id%>/edit">Edit Section</a></p></li>
-  <li><p><a href="/sections/<%=@section.next.id%>">Next Section</a></p></li>
-  <li><p><a href="/sections/<%=@section.prev.id%>">Previous Section</a></p></li>
-</ul>
+</div>
