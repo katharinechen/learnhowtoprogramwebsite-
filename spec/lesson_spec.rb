@@ -40,4 +40,13 @@ describe "Lesson" do
     end
   end
 
+  context '#prev' do
+    it 'returns the previous numbered lesson' do
+      current_lesson = Lesson.create({:name => 'lesson2', content: "blahlalha", :number => 2})
+      prev_lesson = Lesson.create({:name => 'lesson1', content: "blahlalha", :number => 1})
+      @lesson = current_lesson
+      expect(@lesson.prev).to eq prev_lesson
+    end
+  end
+
 end
