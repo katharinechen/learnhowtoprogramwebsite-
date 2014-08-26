@@ -22,12 +22,12 @@ describe "Lesson" do
     expect(new_lesson2.save).to eq false
   end
 
-  # context '#next' do
-  #   it 'returns the lesson with the next-highest number than the current lesson' do
-  #     current_lesson = Lesson.create({:name => 'lesson1', :number => 1})
-  #     next_lesson = Lesson.create({:name => 'lesson2', :number => 2})
-  #     current_lesson.next.should eq next_lesson
-  #   end
-  # end
+  context '#next' do
+    it 'returns the lesson with the next-highest number than the current lesson' do
+      current_lesson = Lesson.create({:name => 'lesson1', :number => 1})
+      next_lesson = Lesson.create({:name => 'lesson2', :number => 2})
+      current_lesson.next.should eq next_lesson
+    end
+  end
 
 end

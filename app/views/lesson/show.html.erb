@@ -1,6 +1,8 @@
 <h1><%= @lesson.name %></h1>
 
-<h2>Content</h2>
+<h2>Lesson <%= @lesson.number%></h2>
+
+<h3>Content</h3>
 <%= @lesson.content %>
 
 
@@ -10,3 +12,4 @@
   Delete Lesson</a>
 </p>
 
+<p><a href="/lessons/<%=@lesson.id%>/edit">Edit Lesson</a></p>
