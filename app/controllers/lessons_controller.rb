@@ -19,6 +19,8 @@ class LessonsController < ApplicationController
       flash[:notice] = "Invalid Entry! Try again!!!!"
       render('lesson/new.html.erb')
     end
+    this_lesson_section = Section.find(@lesson.section_id)
+    this_lesson_section.lessons << @lesson
   end
 
   def show

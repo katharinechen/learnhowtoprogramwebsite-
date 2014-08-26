@@ -14,9 +14,9 @@
 
     <div class="form-group">
       <label for="section_menu">Section Menu</label>
-      <select id="section_menu" class="form-control">
+      <select id="section_menu" class="form-control" name="lesson[section_id]" >
         <%= @sections.all.each do |section| %>
-        <option><%=section.name%></option>
+        <option value="<%= section.id %>"><%=section.name%></option>
         <% end %>
       </select>
     </div>
