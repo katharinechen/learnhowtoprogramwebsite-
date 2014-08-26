@@ -6,6 +6,6 @@
   <p>There are currently no lessons. Please add a few.</p>
 <% else %>
   <% @lessons.each do |lesson| %>
-    <%= lesson.name %>
+    <li><%= lesson.name %></li>
   <% end %>
 <% end %>
