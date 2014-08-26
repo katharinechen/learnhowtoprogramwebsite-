@@ -6,4 +6,17 @@ class Lesson < ActiveRecord::Base
 
   default_scope {order('number')}
 
+  def next
+    current_lesson_index = nil
+
+    Lesson.all.each_with_index do |lesson, i|
+      if (self == lesson)
+        current_lesson_index = i
+        break
+      end
+    end
+
+    Lesson.all[current_lesson_index + 1]
+  end
+
 end
