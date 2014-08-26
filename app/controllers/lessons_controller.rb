@@ -25,4 +25,10 @@ class LessonsController < ApplicationController
     render('lesson/show.html.erb')
   end
 
+  def destroy
+    @lesson = Lesson.find(params[:id])
+    @lesson.destroy
+    flash[:notice] = "You destroyed the lesson: #{@lesson.name}!"
+    redirect_to('/lessons')
+  end
 end

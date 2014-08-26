@@ -2,3 +2,11 @@
 
 <h2>Content</h2>
 <%= @lesson.content %>
+
+
+<p><a href="/lessons/<%=@lesson.id%>"
+  data-confirm="Are you sure?"
+  data-method="delete" rel="nofollow">
+  Delete Lesson</a>
+</p>
+
