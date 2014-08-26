@@ -31,4 +31,20 @@ class LessonsController < ApplicationController
     flash[:notice] = "You destroyed the lesson: #{@lesson.name}!"
     redirect_to('/lessons')
   end
+
+  def edit
+    @lesson = Lesson.find(params[:id])
+    render('lesson/edit.html.erb')
+  end
+
+  def update
+    @lesson = Lesson.find(params[:id])
+    if @lesson.update(params[:lesson])
+      flash[:notice] = "You have sucessfully updated #{@lesson.name}."
+      redirect_to("/lessons/#{@lesson.id}")
+    else
+      flash[:notice] = "You have FAILED. Try again."
+      render('lesson/edit.html.erb')
+    end
+  end
 end
