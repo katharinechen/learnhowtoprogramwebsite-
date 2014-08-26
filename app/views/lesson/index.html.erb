@@ -1,0 +1,11 @@
+<h1>Lesson List</h1>
+
+<p>Here is a list of all of the lessons:</p>
+
+<% if @lessons == [] %>
+  <p>There are currently no lessons. Please add a few.</p>
+<% else %>
+  <% @lessons.each do |lesson| %>
+    <%= lesson.name %>
+  <% end %>
+<% end %>
