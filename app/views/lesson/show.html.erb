@@ -5,14 +5,11 @@
 <h3>Content</h3>
 <%= @lesson.content %>
 
-
-<p><a href="/lessons/<%=@lesson.id%>"
+<ul>
+  <li><p><a href="/lessons/<%=@lesson.id%>"
   data-confirm="Are you sure?"
   data-method="delete" rel="nofollow">
-  Delete Lesson</a>
-</p>
-
-<p><a href="/lessons/<%=@lesson.id%>/edit">Edit Lesson</a></p>
-
-<p><a href="/lessons/"></a>
-</p>
+  Delete Lesson</a></p></li>
+  <li><p><a href="/lessons/<%=@lesson.id%>/edit">Edit Lesson</a></p></li>
+  <li><p><a href="/lessons/<%=@lesson.next.id%>">Next Lesson</a></p></li>
+</ul>

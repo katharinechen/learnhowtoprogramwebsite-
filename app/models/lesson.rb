@@ -16,7 +16,11 @@ class Lesson < ActiveRecord::Base
       end
     end
 
-    Lesson.all[current_lesson_index + 1]
+    if current_lesson_index < (Lesson.all.length - 1)
+      Lesson.all[current_lesson_index + 1]
+    else
+      Lesson.all[current_lesson_index]
+    end
   end
 
 end
