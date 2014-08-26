@@ -1,0 +1,11 @@
+<h1>Section List</h1>
+
+<p>Here is a list of all of the sections:</p>
+
+<% if @sections == [] %>
+  <p>There are currently no sections. Please add a few.</p>
+<% else %>
+  <% @sections.each do |section| %>
+    <li><a href="/sections/<%=section.id%>"><%= section.name %></a></li>
+  <% end %>
+<% end %>
