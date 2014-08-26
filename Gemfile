@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'rails'
-gem 'pg'
+gem 'bootstrap-sass'
 gem 'sass-rails'
+gem 'autoprefixer-rails'
+gem 'pg'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'

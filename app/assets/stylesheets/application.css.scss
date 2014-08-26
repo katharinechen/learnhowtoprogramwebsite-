@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+/*@import "bootstrap-compass";*/
+@import "bootstrap";
+@import "bootstrap-sprockets";
+
+.jumbotron {
+  text-align: center;
+}
+
