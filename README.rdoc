@@ -20,7 +20,7 @@ Download all of the necessary Gems.
 
 Setup the appropriate databases by entering the following in your terminal:
 
-   rake db:create
+    rake db:create
     rake db:migrate
 
 To view the site, enter localhost:3000 in your browser:
